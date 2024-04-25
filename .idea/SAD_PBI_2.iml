@@ -8,10 +8,15 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://C:/weka-3-8-6/weka.jar!/" />
+          <root url="file://C:/Weka-3-8-6" />
+          <root url="file://C:/Weka-3-8-6" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="file://C:/Weka-3-8-6" />
+        </SOURCES>
+        <jarDirectory url="file://C:/Weka-3-8-6" recursive="false" />
+        <jarDirectory url="file://C:/Weka-3-8-6" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
   </component>
