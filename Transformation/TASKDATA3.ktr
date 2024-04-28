@@ -529,7 +529,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>Z:/Documents/GitHub/SAD_PBI_2/Output/csv/TASKDATA1</name>
+      <name>Z:/Documents/GitHub/SAD_PBI_2/Output/csv/TASKDATA3</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
       <extention>csv</extention>
@@ -556,7 +556,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>752</xloc>
+      <xloc>736</xloc>
       <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
@@ -582,13 +582,16 @@
     <give_back_row>N</give_back_row>
     <group>
       <field>
-        <name>ORDERNUMBER</name>
+        <name>CUSTOMERNAME</name>
+      </field>
+      <field>
+        <name>CREDITLIMIT</name>
       </field>
     </group>
     <fields>
       <field>
-        <aggregate>PRODUCTNAME</aggregate>
-        <subject>PRODUCTNAME</subject>
+        <aggregate>DEALSIZE</aggregate>
+        <subject>DEALSIZE</subject>
         <type>CONCAT_COMMA</type>
         <valuefield/>
       </field>
@@ -624,13 +627,13 @@
       <jsScript>
         <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var PRODUCTNAME_1 = replace(PRODUCTNAME, "\'", "_", " ", "_");</jsScript_script>
+        <jsScript_script>var CUSTOMERNAME_1 = replace(CUSTOMERNAME, "\'", "_", " ", "_", "-", "_");</jsScript_script>
       </jsScript>
     </jsScripts>
     <fields>
       <field>
-        <name>PRODUCTNAME_1</name>
-        <rename>PRODUCTNAME</rename>
+        <name>CUSTOMERNAME_1</name>
+        <rename>CUSTOMERNAME</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -663,11 +666,11 @@
       <schema_name/>
     </partitioning>
     <connection>SteelWheels_Connection</connection>
-    <sql>SELECT ORDERNUMBER, PRODUCTS.PRODUCTNAME
-FROM "PUBLIC".ORDERFACT
-INNER JOIN CUSTOMERS ON ORDERFACT.CUSTOMERNUMBER = CUSTOMERS.CUSTOMERNUMBER
-INNER JOIN PRODUCTS ON ORDERFACT.PRODUCTCODE = PRODUCTS.PRODUCTCODE
-WHERE YEAR_ID=2004 AND CUSTOMERS.COUNTRY = 'USA';
+    <sql>SELECT SALES_DATA.DEALSIZE, CUSTOMERS.CUSTOMERNAME, CUSTOMERS.CREDITLIMIT
+FROM CUSTOMERS, SALES_DATA
+WHERE SALES_DATA.CUSTOMERNAME = CUSTOMERS.CUSTOMERNAME AND
+SALES_DATA.YEAR_ID = 2005 AND
+SALES_DATA.TERRITORY = 'EMEA';
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -677,14 +680,14 @@ WHERE YEAR_ID=2004 AND CUSTOMERS.COUNTRY = 'USA';
     <cached_row_meta_active>N</cached_row_meta_active>
     <row-meta>
       <value-meta>
-        <type>Integer</type>
+        <type>String</type>
         <storagetype>normal</storagetype>
-        <name>ORDERNUMBER</name>
-        <length>9</length>
-        <precision>0</precision>
+        <name>DEALSIZE</name>
+        <length>255</length>
+        <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>ORDERNUMBER</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
+        <comments>DEALSIZE</comments>
+        <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
@@ -702,12 +705,35 @@ WHERE YEAR_ID=2004 AND CUSTOMERS.COUNTRY = 'USA';
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>PRODUCTNAME</name>
-        <length>70</length>
+        <name>CUSTOMERNAME</name>
+        <length>50</length>
         <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>PRODUCTNAME</comments>
+        <comments>CUSTOMERNAME</comments>
         <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>CREDITLIMIT</name>
+        <length>17</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>CREDITLIMIT</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>

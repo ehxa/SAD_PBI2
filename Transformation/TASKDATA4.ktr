@@ -529,7 +529,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>Z:/Documents/GitHub/SAD_PBI_2/Output/csv/TASKDATA1</name>
+      <name>Z:/Documents/GitHub/SAD_PBI_2/Output/csv/TASKDATA4</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
       <extention>csv</extention>
@@ -582,13 +582,13 @@
     <give_back_row>N</give_back_row>
     <group>
       <field>
-        <name>ORDERNUMBER</name>
+        <name>CUSTOMERNAME</name>
       </field>
     </group>
     <fields>
       <field>
-        <aggregate>PRODUCTNAME</aggregate>
-        <subject>PRODUCTNAME</subject>
+        <aggregate>PRODUCTSCALE</aggregate>
+        <subject>PRODUCTSCALE</subject>
         <type>CONCAT_COMMA</type>
         <valuefield/>
       </field>
@@ -624,13 +624,22 @@
       <jsScript>
         <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var PRODUCTNAME_1 = replace(PRODUCTNAME, "\'", "_", " ", "_");</jsScript_script>
+        <jsScript_script>var CUSTOMERNAME_1 = replace(CUSTOMERNAME, "\'", "_", " ", "_", "-", " ");
+var PRODUCTSCALE_1 = PRODUCTSCALE.replace(/1:/g, "");</jsScript_script>
       </jsScript>
     </jsScripts>
     <fields>
       <field>
-        <name>PRODUCTNAME_1</name>
-        <rename>PRODUCTNAME</rename>
+        <name>CUSTOMERNAME_1</name>
+        <rename>CUSTOMERNAME</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>
+      <field>
+        <name>PRODUCTSCALE_1</name>
+        <rename>PRODUCTSCALE</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -663,12 +672,13 @@
       <schema_name/>
     </partitioning>
     <connection>SteelWheels_Connection</connection>
-    <sql>SELECT ORDERNUMBER, PRODUCTS.PRODUCTNAME
-FROM "PUBLIC".ORDERFACT
-INNER JOIN CUSTOMERS ON ORDERFACT.CUSTOMERNUMBER = CUSTOMERS.CUSTOMERNUMBER
-INNER JOIN PRODUCTS ON ORDERFACT.PRODUCTCODE = PRODUCTS.PRODUCTCODE
-WHERE YEAR_ID=2004 AND CUSTOMERS.COUNTRY = 'USA';
-</sql>
+    <sql>SELECT SALES_DATA.CUSTOMERNAME, PRODUCTS.PRODUCTSCALE
+FROM PRODUCTS, SALES_DATA
+WHERE
+SALES_DATA.PRODUCTCODE = PRODUCTS.PRODUCTCODE AND
+SALES_DATA.TERRITORY = 'NA' AND
+SALES_DATA.QTR_ID = 4 AND
+SALES_DATA.YEAR_ID = 2004;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -677,14 +687,14 @@ WHERE YEAR_ID=2004 AND CUSTOMERS.COUNTRY = 'USA';
     <cached_row_meta_active>N</cached_row_meta_active>
     <row-meta>
       <value-meta>
-        <type>Integer</type>
+        <type>String</type>
         <storagetype>normal</storagetype>
-        <name>ORDERNUMBER</name>
-        <length>9</length>
-        <precision>0</precision>
+        <name>CUSTOMERNAME</name>
+        <length>34</length>
+        <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>ORDERNUMBER</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
+        <comments>CUSTOMERNAME</comments>
+        <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
@@ -702,11 +712,11 @@ WHERE YEAR_ID=2004 AND CUSTOMERS.COUNTRY = 'USA';
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>PRODUCTNAME</name>
-        <length>70</length>
+        <name>PRODUCTSCALE</name>
+        <length>10</length>
         <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>PRODUCTNAME</comments>
+        <comments>PRODUCTSCALE</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>

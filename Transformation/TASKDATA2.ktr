@@ -491,7 +491,7 @@
     <hop>
       <from>Modified JavaScript value</from>
       <to>Group by</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Group by</from>
@@ -529,7 +529,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>Z:/Documents/GitHub/SAD_PBI_2/Output/csv/TASKDATA1</name>
+      <name>Z:/Documents/GitHub/SAD_PBI_2/Output/csv/TASKDATA2</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
       <extention>csv</extention>
@@ -546,6 +546,30 @@
       <splitevery/>
     </file>
     <fields>
+      <field>
+        <name>PRODUCTNAME</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>CREDITLIMIT</name>
+        <type>Integer</type>
+        <format>####0;-####0</format>
+        <currency/>
+        <decimal>,</decimal>
+        <group>.</group>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>17</length>
+        <precision>0</precision>
+      </field>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -582,7 +606,10 @@
     <give_back_row>N</give_back_row>
     <group>
       <field>
-        <name>ORDERNUMBER</name>
+        <name>PRODUCTNAME</name>
+      </field>
+      <field>
+        <name>CREDITLIMIT</name>
       </field>
     </group>
     <fields>
@@ -624,7 +651,7 @@
       <jsScript>
         <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var PRODUCTNAME_1 = PRODUCTNAME.replace(/[' ]/g, "_");</jsScript_script>
+        <jsScript_script>var PRODUCTNAME_1 = replace(PRODUCTNAME, "\'", "_", " ", "_", "-", "_");</jsScript_script>
       </jsScript>
     </jsScripts>
     <fields>
@@ -663,11 +690,11 @@
       <schema_name/>
     </partitioning>
     <connection>SteelWheels_Connection</connection>
-    <sql>SELECT ORDERNUMBER, PRODUCTS.PRODUCTNAME
-FROM "PUBLIC".ORDERFACT
-INNER JOIN CUSTOMERS ON ORDERFACT.CUSTOMERNUMBER = CUSTOMERS.CUSTOMERNUMBER
-INNER JOIN PRODUCTS ON ORDERFACT.PRODUCTCODE = PRODUCTS.PRODUCTCODE
-WHERE YEAR_ID=2004 AND CUSTOMERS.COUNTRY = 'USA';
+    <sql>SELECT PRODUCTS.PRODUCTNAME, CUSTOMERS.CREDITLIMIT
+FROM PRODUCTS, CUSTOMERS, SALES_DATA
+WHERE SALES_DATA.CUSTOMERNAME = CUSTOMERS.CUSTOMERNAME AND
+SALES_DATA.PRODUCTCODE = PRODUCTS.PRODUCTCODE AND
+SALES_DATA.TERRITORY = 'EMEA';
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -677,14 +704,14 @@ WHERE YEAR_ID=2004 AND CUSTOMERS.COUNTRY = 'USA';
     <cached_row_meta_active>N</cached_row_meta_active>
     <row-meta>
       <value-meta>
-        <type>Integer</type>
+        <type>String</type>
         <storagetype>normal</storagetype>
-        <name>ORDERNUMBER</name>
-        <length>9</length>
-        <precision>0</precision>
+        <name>PRODUCTNAME</name>
+        <length>70</length>
+        <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>ORDERNUMBER</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
+        <comments>PRODUCTNAME</comments>
+        <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
@@ -700,14 +727,14 @@ WHERE YEAR_ID=2004 AND CUSTOMERS.COUNTRY = 'USA';
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>String</type>
+        <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>PRODUCTNAME</name>
-        <length>70</length>
-        <precision>-1</precision>
+        <name>CREDITLIMIT</name>
+        <length>17</length>
+        <precision>0</precision>
         <origin>Table input</origin>
-        <comments>PRODUCTNAME</comments>
-        <conversion_Mask/>
+        <comments>CREDITLIMIT</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
