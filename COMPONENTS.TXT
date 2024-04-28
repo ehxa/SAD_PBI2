@@ -1,0 +1,4 @@
+Pentaho - A.02 - C:\pentaho
+Visual Studio Code - A.02 - /Applications
+Weka - A.02 - /Users/diogo/Documents/GitHub/SAD_PBI_2/lib
+Commons-csv - A.02 - /Users/diogo/Documents/GitHub/SAD_PBI_2/lib
