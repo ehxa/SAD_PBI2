@@ -1,1 +1,0 @@
-cd src && javac -cp .:../lib/weka.jar CSVToARFFConverter.java && java -cp .:../lib/weka.jar CSVToARFFConverter
