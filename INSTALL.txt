@@ -1,2 +1,2 @@
-xcopy /s "C:\Program Files\Weka-3-9-6" "%cd%\implementacao\lib" /y
-xcopy /s "C:\SAD\commons-csv-1.10.0" "%cd%\implementacao\lib" /y
+xcopy /s "C:\Program Files\Weka-3-9-6\weka.jar" "%cd%\implementacao\lib" /y
+xcopy /s "C:\SAD\commons-csv-1.10.0\commons-csv-1.10.0.jar" "%cd%\implementacao\lib" /y
