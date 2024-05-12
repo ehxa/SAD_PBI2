@@ -496,7 +496,7 @@
     <hop>
       <from>Modified JavaScript value</from>
       <to>Filter rows</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Filter rows</from>
@@ -661,7 +661,7 @@
     <sql>SELECT DISTINCT SALES_DATA.ORDERNUMBER, PRODUCTS.PRODUCTNAME, SALES_DATA.QTR_ID, SALES_DATA.TERRITORY
 FROM PRODUCTS, SALES_DATA
 WHERE SALES_DATA.PRODUCTCODE = PRODUCTS.PRODUCTCODE AND
-(PRODUCTS.PRODUCTLINE = 'Classic Cars' OR PRODUCTS.PRODUCTLINE = 'Vintage Cars')
+(PRODUCTS.PRODUCTLINE = 'Classic Cars')
 ORDER BY SALES_DATA.ORDERNUMBER;</sql>
     <limit>0</limit>
     <lookup/>
