@@ -1,0 +1,19 @@
+@RELATION supermarket
+
+@ATTRIBUTE bread {yes, no}
+@ATTRIBUTE milk {yes, no}
+@ATTRIBUTE butter {yes, no}
+@ATTRIBUTE beer {yes, no}
+@ATTRIBUTE diapers {yes, no}
+
+@DATA
+yes, yes, no, no, yes
+no, yes, yes, yes, no
+yes, no, no, yes, yes
+no, yes, yes, no, no
+yes, yes, yes, no, no
+no, no, no, yes, yes
+yes, no, yes, no, no
+no, yes, no, yes, yes
+yes, no, no, no, no
+yes, yes, yes, yes, no
