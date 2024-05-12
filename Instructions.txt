@@ -1,2 +1,4 @@
-Converter: cd ./implementacao/src && javac -cp .:../lib/weka.jar CSVToARFFConverter.java && java -cp .:../lib/weka.jar CSVToARFFConverter && cd ../..
-Formatter: cd ./implementacao/src && javac -cp .:../lib/commons-csv-1.10.0.jar CSVFormatter.java && java -cp .:../lib/commons-csv-1.10.0.jar CSVFormatter && cd ../..
+Converter: cd ./implementacao/Fase2/src && javac -cp .:../lib/weka.jar CSVToARFFConverter.java && java -cp .:../lib/weka.jar CSVToARFFConverter && cd ../../..
+Formatter: cd ./implementacao/Fase2/src && javac -cp .:../lib/commons-csv-1.10.0.jar CSVFormatter.java && java -cp .:../lib/commons-csv-1.10.0.jar CSVFormatter && cd ../../..
+RemoveSpaces: cd ./implementacao/Fase2/src && javac -cp .:../lib/commons-csv-1.10.0.jar RemoveSpaces.java && java -cp .:../lib/commons-csv-1.10.0.jar RemoveSpaces && cd ../../..
+UniConverter: cd ./implementacao/Fase2/src && javac -cp .:../lib/commons-csv-1.10.0.jar UniCSVtoARFFConverter.java && java -cp .:../lib/commons-csv-1.10.0.jar UniCSVtoARFFConverter && cd ../../..

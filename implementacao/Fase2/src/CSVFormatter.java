@@ -13,49 +13,42 @@ import java.util.Scanner;
 
 public class CSVFormatter
 {
-    public static void main ( String[] args )
-    {
-        System.out.println ( "Hello World!" );
+    public static void main ( String[] args ) {
         CSVFormatter file = new CSVFormatter ();
         file.csvFormat ();
     }
 
-    private void csvFormat ( )
-    {
-        try
-        {
-            // Read CSV file.
-             Scanner input = new Scanner(System.in);
+    private void csvFormat ( ) {
+        try {
+            Scanner input = new Scanner(System.in);
             System.out.print("Insert the name of the csv: ");
             String fileName = input.nextLine();
             String sourceFilePath = "../Output/csv/" + fileName + ".csv";
             String destinationFilePath = "../Output/csv/" + fileName + "New.csv";
             Path pathInput = Paths.get ( sourceFilePath );
             Path pathOutput = Paths.get ( destinationFilePath );
+            System.out.print("Insert the name of the aggregator column: ");
+            String aggregator = input.nextLine();
+            System.out.print("Insert the name of the aggregate column: ");
+            String aggregate = input.nextLine();
             try (
-                    final BufferedReader reader = Files.newBufferedReader ( pathInput , StandardCharsets.UTF_8 ) ;
-                    final CSVPrinter printer = CSVFormat.RFC4180.withHeader ( "PRODUCTNAME" ).print ( pathOutput , StandardCharsets.UTF_8 ) ;
+                    final BufferedReader reader = Files.newBufferedReader(pathInput,StandardCharsets.UTF_8);
+                    final CSVPrinter printer = CSVFormat.RFC4180.withHeader(aggregate).withQuote(null).print(pathOutput , StandardCharsets.UTF_8);
             )
             {
-                Iterable < CSVRecord > records = CSVFormat.RFC4180.withFirstRecordAsHeader ().parse ( reader );
-                // We expect these headers: ORDERNUMBER,PRODUCTNAME
-                for ( CSVRecord record : records )
-                {
-                    // Read.
-                    Integer orderNumber = Integer.valueOf ( record.get ( "ORDERNUMBER" ) );
-                    String productName = record.get ( "PRODUCTNAME" );
-                    productName = productName.replaceAll("\\s", "");
-                    System.out.println ( "ORDERNUMBER: " + orderNumber + " | PRODUCTNAME: " + productName );
-
-                    // Write.
-                    printer.printRecord ( productName );
+                Iterable < CSVRecord > records = CSVFormat.RFC4180.withFirstRecordAsHeader().parse (reader);
+                for (CSVRecord record : records) {
+                    String aggregatorValue = record.get ( aggregator );
+                    String aggregateValue = record.get ( aggregate );
+                    aggregateValue = aggregateValue.replaceAll("\\s", "");
+                    aggregateValue = aggregateValue.replaceAll("[\"“”‘’']", ""); 
+                    System.out.println ( aggregator + ": " + aggregatorValue + " | " +  aggregate + ": " + aggregateValue );
+                    printer.printRecord ( aggregateValue );
                 }
             }
-        } catch ( InvalidPathException e )
-        {
+        } catch ( InvalidPathException e ){
             e.printStackTrace ();
-        } catch ( IOException e )
-        {
+        } catch ( IOException e ){
             e.printStackTrace ();
         }
     }
