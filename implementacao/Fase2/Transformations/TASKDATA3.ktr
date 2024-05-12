@@ -529,7 +529,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>${PDI_PATH}/Output/csv/TASKDATA2</name>
+      <name>${PDI_PATH}/Output/csv/TASKDATA3</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
       <extention>csv</extention>

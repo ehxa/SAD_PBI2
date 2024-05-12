@@ -15,7 +15,6 @@ public class CSVToARFFConverter {
         loader.setSource(new File(sourceFilePath));
         Instances data = loader.getDataSet();
         System.out.println(data.get(0));
-
         ArffSaver saver = new ArffSaver();
         saver.setInstances(data);
         saver.setFile(new File(destinationFilePath));
