@@ -496,7 +496,7 @@
     <hop>
       <from>Modified JavaScript value</from>
       <to>Filter rows</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Filter rows</from>
