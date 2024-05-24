@@ -5,3 +5,6 @@ implementacao/.DS_Store
 .DS_Store
 implementacao/.DS_Store
 .DS_Store
+*.iml
+.idea/libraries/lib.xml
+/.idea

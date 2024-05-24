@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<
+?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
     <name>TASKDATA4</name>
@@ -529,7 +530,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>${PDI_PATH}/Output/csv/TASKDATA4</name>
+      <name>C:\Users\diogo\Documents\GitHub\SAD_PBI_2\implementacao\Fase2\Output\objetivo2\TASKDATA4</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
       <extention>csv</extention>
