@@ -54,8 +54,8 @@ public class PBI2 {
             Scanner input = new Scanner(System.in);
             System.out.print("Insert the name of the csv: ");
             String fileName = input.nextLine();
-            String sourceFilePath = "../../Output/csv/" + fileName + ".csv";
-            String destinationFilePath = "../../Output/csv/" + fileName + "New.csv";
+            String sourceFilePath = "C:\\Users\\diogo\\Documents\\GitHub\\SAD_PBI_2\\implementacao\\Fase2\\Output\\csv\\" + fileName + ".csv";
+            String destinationFilePath = "C:\\Users\\diogo\\Documents\\GitHub\\SAD_PBI_2\\implementacao\\Fase2\\Output\\csv\\" + fileName + "New.csv";
             Path pathInput = Paths.get(sourceFilePath);
             Path pathOutput = Paths.get(destinationFilePath);
             System.out.print("Insert the name of the aggregator column: ");
@@ -88,8 +88,8 @@ public class PBI2 {
         System.out.print("Insert the name of the csv: ");
         String fileName = input.nextLine();
         CSVLoader loader = new CSVLoader();
-        String sourceFilePath = "../../Output/csv/" + fileName + ".csv";
-        String destinationFilePath = "../../Output/arff/" + fileName + ".arff";
+        String sourceFilePath = "C:\\Users\\diogo\\Documents\\GitHub\\SAD_PBI_2\\implementacao\\Fase2\\Output\\csv\\" + fileName + ".csv";
+        String destinationFilePath = "C:\\Users\\diogo\\Documents\\GitHub\\SAD_PBI_2\\implementacao\\Fase2\\Output\\csv\\" + fileName + ".arff";
         loader.setSource(new File(sourceFilePath));
         Instances data = loader.getDataSet();
         System.out.println(data.get(0));
@@ -104,8 +104,8 @@ public class PBI2 {
         System.out.print("Insert the name of the csv: ");
         String fileName = input.nextLine();
         input.close();
-        String sourceFilePath = "../../Output/csv/" + fileName + ".csv";
-        String destinationFilePath = "../../Output/csv/" + fileName + "New.csv";
+        String sourceFilePath = "C:\\Users\\diogo\\Documents\\GitHub\\SAD_PBI_2\\implementacao\\Fase2\\Output\\csv\\" + fileName + ".csv";
+        String destinationFilePath = "C:\\Users\\diogo\\Documents\\GitHub\\SAD_PBI_2\\implementacao\\Fase2\\Output\\csv\\" + fileName + "New.csv";
         File source = new File(sourceFilePath);
         try {
             Scanner csvScanner = new Scanner(source);
@@ -129,8 +129,8 @@ public class PBI2 {
             Scanner input = new Scanner(System.in);
             System.out.print("Insert the name of the csv: ");
             String fileName = input.nextLine();
-            String sourceFilePath = "../../Output/csv/" + fileName + ".csv";
-            String destinationFilePath = "../../Output/arff/" + fileName + ".arff";
+            String sourceFilePath = "C:\\Users\\diogo\\Documents\\GitHub\\SAD_PBI_2\\implementacao\\Fase2\\Output\\csv\\" + fileName + ".csv";
+            String destinationFilePath = "C:\\Users\\diogo\\Documents\\GitHub\\SAD_PBI_2\\implementacao\\Fase2\\Output\\arff\\" + fileName + ".arff";
             System.out.println(sourceFilePath);
             File myObj = new File(sourceFilePath);
             Scanner myReader = new Scanner(myObj);
