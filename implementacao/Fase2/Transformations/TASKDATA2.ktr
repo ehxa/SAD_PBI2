@@ -500,11 +500,6 @@
     </hop>
     <hop>
       <from>Filter rows</from>
-      <to>Group by</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Group by</from>
       <to>CSV Output</to>
       <enabled>Y</enabled>
     </hop>
@@ -534,7 +529,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>${PDI_PATH}/Output/csv/TASKDATA2</name>
+      <name>Z:\Documents\GitHub\SAD_PBI_2\implementacao\Fase2\Output\csv\TASKDATA2.csv</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
       <extention>csv</extention>
@@ -551,42 +546,6 @@
       <splitevery/>
     </file>
     <fields>
-      <field>
-        <name>PRODUCTNAME</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>QTR_ID</name>
-        <type>Integer</type>
-        <format>####0;-####0</format>
-        <currency/>
-        <decimal>,</decimal>
-        <group>.</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>0</precision>
-      </field>
-      <field>
-        <name>TERRITORY</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -613,7 +572,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <send_true_to/>
+    <send_true_to>CSV Output</send_true_to>
     <send_false_to/>
     <compare>
       <condition>
@@ -632,65 +591,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>592</xloc>
-      <yloc>272</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Group by</name>
-    <type>GroupBy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <all_rows>N</all_rows>
-    <ignore_aggregate>N</ignore_aggregate>
-    <field_ignore/>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>grp</prefix>
-    <add_linenr>N</add_linenr>
-    <linenr_fieldname/>
-    <give_back_row>N</give_back_row>
-    <group>
-      <field>
-        <name>ORDERNUMBER</name>
-      </field>
-    </group>
-    <fields>
-      <field>
-        <aggregate>PRODUCTNAME</aggregate>
-        <subject>PRODUCTNAME</subject>
-        <type>-</type>
-        <valuefield/>
-      </field>
-      <field>
-        <aggregate>MONTH_ID</aggregate>
-        <subject>MONTH_ID</subject>
-        <type>-</type>
-        <valuefield/>
-      </field>
-      <field>
-        <aggregate>TERRITORY</aggregate>
-        <subject>TERRITORY</subject>
-        <type>-</type>
-        <valuefield/>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>720</xloc>
+      <xloc>640</xloc>
       <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
@@ -712,13 +613,32 @@
       <jsScript>
         <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var PRODUCTNAME_1 = replace(PRODUCTNAME, "\'", "_", " ", "_", "-", "_");</jsScript_script>
+        <jsScript_script>var PRODUCTNAME = replace(PRODUCTNAME, "\'", "_", " ", "_", "-", "_");
+var QUANTITYORDERED;
+
+if (QUANTITYORDERED &lt; 25){
+	QUANTITYORDERED = 'LOW';
+}
+else if (QUANTITYORDERED &lt; 51) {
+	QUANTITYORDERED = 'MEDIUM';
+}
+else {
+	QUANTITYORDERED = 'HIGH';
+}</jsScript_script>
       </jsScript>
     </jsScripts>
     <fields>
       <field>
-        <name>PRODUCTNAME_1</name>
+        <name>PRODUCTNAME</name>
         <rename>PRODUCTNAME</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>
+      <field>
+        <name>QUANTITYORDERED</name>
+        <rename>QUANTITYORDERED</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -751,11 +671,9 @@
       <schema_name/>
     </partitioning>
     <connection>SteelWheels_Connection</connection>
-    <sql>SELECT DISTINCT SALES_DATA.ORDERNUMBER, PRODUCTS.PRODUCTNAME, SALES_DATA.MONTH_ID, SALES_DATA.TERRITORY
+    <sql>SELECT DISTINCT PRODUCTS.PRODUCTNAME, SALES_DATA.MONTH_ID, SALES_DATA.TERRITORY, SALES_DATA.QUANTITYORDERED
 FROM PRODUCTS, SALES_DATA
-WHERE SALES_DATA.PRODUCTCODE = PRODUCTS.PRODUCTCODE AND
-(PRODUCTS.PRODUCTLINE = 'Classic Cars') 
-ORDER BY SALES_DATA.ORDERNUMBER;</sql>
+WHERE SALES_DATA.PRODUCTCODE = PRODUCTS.PRODUCTCODE;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -763,29 +681,6 @@ ORDER BY SALES_DATA.ORDERNUMBER;</sql>
     <lazy_conversion_active>N</lazy_conversion_active>
     <cached_row_meta_active>N</cached_row_meta_active>
     <row-meta>
-      <value-meta>
-        <type>Integer</type>
-        <storagetype>normal</storagetype>
-        <name>ORDERNUMBER</name>
-        <length>15</length>
-        <precision>0</precision>
-        <origin>Table input</origin>
-        <comments>ORDERNUMBER</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
@@ -841,6 +736,29 @@ ORDER BY SALES_DATA.ORDERNUMBER;</sql>
         <origin>Table input</origin>
         <comments>TERRITORY</comments>
         <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>QUANTITYORDERED</name>
+        <length>15</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>QUANTITYORDERED</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
