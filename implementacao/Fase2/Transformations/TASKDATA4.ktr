@@ -1,5 +1,4 @@
-<
-?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
     <name>TASKDATA4</name>
@@ -10,6 +9,11 @@
     <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
+      <parameter>
+        <name>PDI_PATH</name>
+        <default_value>Z:\Documents\GitHub\SAD_PBI_2\implementacao\Fase2</default_value>
+        <description/>
+      </parameter>
     </parameters>
     <log>
       <trans-log-table>
@@ -530,7 +534,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>C:\Users\diogo\Documents\GitHub\SAD_PBI_2\implementacao\Fase2\Output\objetivo2\TASKDATA4</name>
+      <name>${PDI_PATH}\Output\csv\TASKDATA4</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
       <extention>csv</extention>
@@ -625,7 +629,7 @@
       <jsScript>
         <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var CUSTOMERNAME_1 = replace(CUSTOMERNAME, "\'", "_", " ", "_", "-", " ");
+        <jsScript_script>var CUSTOMERNAME_1 = replace(CUSTOMERNAME, "\'", "_", " ", "_", "-", "_","\"", "","'", "",",","");
 var PRODUCTSCALE_1 = PRODUCTSCALE.replace(/1:/g, "");</jsScript_script>
       </jsScript>
     </jsScripts>

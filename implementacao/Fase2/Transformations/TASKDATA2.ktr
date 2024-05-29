@@ -9,6 +9,11 @@
     <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
+      <parameter>
+        <name>PDI_PATH</name>
+        <default_value>Z:/Documents/GitHub/SAD_PBI_2/implementacao/Fase2</default_value>
+        <description/>
+      </parameter>
     </parameters>
     <log>
       <trans-log-table>
@@ -529,7 +534,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>Z:\Documents\GitHub\SAD_PBI_2\implementacao\Fase2\Output\csv\TASKDATA2.csv</name>
+      <name>${PDI_PATH}/Output/csv/TASKDATA2</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
       <extention>csv</extention>
@@ -556,7 +561,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>832</xloc>
+      <xloc>816</xloc>
       <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
@@ -613,7 +618,7 @@
       <jsScript>
         <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var PRODUCTNAME = replace(PRODUCTNAME, "\'", "_", " ", "_", "-", "_");
+        <jsScript_script>var PRODUCTNAME = replace(PRODUCTNAME, "\'", "_", " ", "_", "-", "_","\"", "","'", "",",","");
 var QUANTITYORDERED;
 
 if (QUANTITYORDERED &lt; 25){
@@ -654,7 +659,7 @@ else {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
+      <xloc>448</xloc>
       <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
@@ -673,7 +678,8 @@ else {
     <connection>SteelWheels_Connection</connection>
     <sql>SELECT DISTINCT PRODUCTS.PRODUCTNAME, SALES_DATA.MONTH_ID, SALES_DATA.TERRITORY, SALES_DATA.QUANTITYORDERED
 FROM PRODUCTS, SALES_DATA
-WHERE SALES_DATA.PRODUCTCODE = PRODUCTS.PRODUCTCODE;</sql>
+WHERE SALES_DATA.PRODUCTCODE = PRODUCTS.PRODUCTCODE
+ORDER BY PRODUCTS.PRODUCTNAME;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
