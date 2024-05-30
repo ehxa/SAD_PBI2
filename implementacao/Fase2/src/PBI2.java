@@ -6,6 +6,9 @@ import org.pentaho.di.core.KettleEnvironment;
 import org.pentaho.di.sdk.samples.embedding.GeneratingTransformations;
 import org.pentaho.di.trans.Trans;
 import org.pentaho.di.trans.TransMeta;
+import weka.associations.Apriori;
+import weka.associations.AssociationRule;
+import weka.associations.AssociationRules;
 import weka.core.Instances;
 import weka.core.converters.ArffSaver;
 import weka.core.converters.CSVLoader;
@@ -314,6 +317,26 @@ public class PBI2 {
             e.printStackTrace();
         }
         return null;
+    }
+    public List<String> apriori(String path, int rules, double confidence, double support) {
+            List<String> list = new ArrayList<>();
+            try {
+                CSVLoader loader = new CSVLoader();
+                loader.setSource(new File(path));
+                Apriori apriori = new Apriori();
+                apriori.setNumRules(rules);
+                apriori.setMinMetric(confidence);
+                apriori.setLowerBoundMinSupport(support);
+                Instances data = loader.getDataSet();
+                apriori.buildAssociations(data);
+                AssociationRules associations = apriori.getAssociationRules();
+                for (AssociationRule association : associations.getRules()){
+                    list.add(association.toString());
+                }
+            } catch (Exception e){
+                System.out.println(e);
+            }
+            return list;
     }
 }
 
