@@ -10,3 +10,8 @@ implementacao/.DS_Store
 /.idea
 out/artifacts/SAD_PBI_2_jar/SAD_PBI_2.jar
 SADRT09.zip
+/.gradle
+gradle/wrapper/gradle-wrapper.properties
+gradlew.bat
+*.jar
+gradlew

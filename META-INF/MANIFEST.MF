@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Main-Class: RunWeka
+Class-Path: commons-csv-1.10.0.jar weka.jar weka.jar commons-csv-1.10.0.
+ jar
+
