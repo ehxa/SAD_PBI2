@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation fileTree(dir: 'implementacao/Fase2/lib', include: ['**/*.jar'])
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['implementacao/Fase2/src']
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
