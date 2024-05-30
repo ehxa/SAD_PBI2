@@ -7,8 +7,8 @@ public class UniCSVtoARFFConverter {
             Scanner input = new Scanner(System.in);
             System.out.print("Insert the name of the csv: ");
             String fileName = input.nextLine();
-            String sourceFilePath = "../Output/csv/" + fileName + ".csv";
-            String destinationFilePath = "../Output/arff/" + fileName + ".arff";
+            String sourceFilePath = "C:\\Users\\diogo\\Documents\\GitHub\\SAD_PBI_2\\implementacao\\Fase2\\Output\\csv\\" + fileName + ".csv";
+            String destinationFilePath = "C:\\Users\\diogo\\Documents\\GitHub\\SAD_PBI_2\\implementacao\\Fase2\\Output\\arff\\" + fileName + ".arff";
             System.out.println(sourceFilePath);
             File myObj = new File(sourceFilePath);
             Scanner myReader = new Scanner(myObj);

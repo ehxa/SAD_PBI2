@@ -10,8 +10,8 @@ public class CSVToARFFConverter {
         System.out.print("Insert the name of the csv: ");
         String fileName = input.nextLine();
         CSVLoader loader = new CSVLoader();
-        String sourceFilePath = "../Output/csv/" + fileName + ".csv";
-        String destinationFilePath = "../Output/arff/" + fileName + ".arff";
+        String sourceFilePath = "C:\\Users\\diogo\\Documents\\GitHub\\SAD_PBI_2\\implementacao\\Fase2\\Output\\csv\\" + fileName + ".csv";
+        String destinationFilePath = "C:\\Users\\diogo\\Documents\\GitHub\\SAD_PBI_2\\implementacao\\Fase2\\Output\\arff\\" + fileName + ".arff";
         loader.setSource(new File(sourceFilePath));
         Instances data = loader.getDataSet();
         System.out.println(data.get(0));

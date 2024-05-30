@@ -1,3 +1,85 @@
 Manifest-Version: 1.0
-Main-Class: RunWeka
+Main-Class: SADPBI2.RunWeka
+Class-Path: pdi-core-plugins-ui-9.4.0.0-343.jar pdi-core-plugins-impl-9.
+ 4.0.0-343.jar asm-3.2.jar js-1.7R3.jar rome-1.0.jar jt400-6.1.jar oro-2
+ .0.8.jar feed4j-1.0.jar guava-17.0.jar h2-2.1.210.jar javacc-5.0.jar jd
+ om-1.1.3.jar jxl-2.6.12.jar ognl-2.6.9.jar dom4j-2.1.1.jar encoder-1.2.
+ jar ini4j-0.5.1.jar javacup-10k.jar jaxen-1.1.6.jar jcifs-1.3.3.jar jsc
+ h-0.1.54.jar jzlib-1.0.7.jar flexjson-2.1.jar hsqldb-2.3.2.jar janino-3
+ .0.8.jar jsonpath-1.0.jar log4jdbc-1.2.jar mstor-0.9.13.jar olap4j-1.2.
+ 0.jar rxjava-2.2.3.jar sapdbc-7.4.4.jar wsdl4j-1.6.2.jar edtftpj-2.1.0.
+ jar ftp4che-0.7.1.jar jaybird-2.1.6.jar saxon-9.1.0.8.jar snakeyaml-1.7
+ .jar snmp4j-1.9.3d.jar activation-1.1.jar curvesapi-1.06.jar javax.el-3
+ .0.0.jar jaxrpc-api-1.1.jar jcommon-1.0.16.jar jug-lgpl-2.0.0.jar mimep
+ ull-1.9.3.jar mxparser-1.2.1.jar xmlbeans-3.1.0.jar xstream-1.4.17.jar 
+ batik-css-1.9.1.jar batik-dom-1.9.1.jar batik-ext-1.9.1.jar batik-gvt-1
+ .9.1.jar batik-xml-1.9.1.jar cglib-nodep-2.2.jar commons-cli-1.2.jar de
+ rby-10.14.2.0.jar httpcore-4.4.11.jar jsendnsca-2.0.1.jar json-simple-1
+ .1.jar nekohtml-1.9.15.jar SassyReader-0.5.jar syslog4j-0.9.46.jar xml-
+ apis-1.4.01.jar xmlpull-1.1.3.1.jar batik-anim-1.9.1.jar batik-i18n-1.9
+ .1.jar batik-util-1.9.1.jar commons-dbcp-1.4.jar commons-lang-2.6.jar c
+ ommons-math-1.1.jar cron-utils-9.1.6.jar httpclient-4.5.9.jar javadbf-2
+ 0081125.jar javax.mail-1.6.1.jar jmi-200507110943.jar joda-time-2.10.2.
+ jar json-9.4.0.0-343.jar jsr311-api-1.1.1.jar ldapjdk-20000524.jar log4
+ j-api-2.17.1.jar log4j-jcl-2.17.1.jar mof-200507110943.jar monetdb-jdbc
+ -2.8.jar slf4j-api-1.7.12.jar spring-aop-5.3.3.jar spring-web-5.3.3.jar
+  batik-codec-1.9.1.jar commons-io-2.11.0.jar commons-net-1.4.1.jar geor
+ ss-rome-0.9.8.jar jfreechart-1.0.13.jar log4j-core-2.17.1.jar odfdom-ja
+ va-0.8.6.jar olap4j-xmla-1.2.0.jar pentaho-cwm-1.5.4.jar saxon-dom-9.1.
+ 0.8.jar snappy-java-1.1.0.jar spring-core-5.3.3.jar xercesImpl-2.12.0.j
+ ar batik-bridge-1.9.1.jar batik-parser-1.9.1.jar batik-script-1.9.1.jar
+  commons-codec-1.15.jar commons-pool-1.5.7.jar commons-vfs2-2.7.0.jar e
+ hcache-core-2.5.1.jar jersey-core-1.19.1.jar postgresql-42.2.23.jar sca
+ nnotation-1.0.2.jar simple-jndi-1.0.10.jar spring-beans-5.3.3.jar tomca
+ t-jdbc-8.5.27.jar tomcat-juli-8.5.27.jar wsdl4j-qname-1.6.1.jar batik-s
+ vg-dom-1.9.1.jar commons-logging-1.2.jar commons-math3-3.6.1.jar eigenb
+ ase-xom-1.3.5.jar infobright-core-3.4.jar jackson-core-2.9.10.jar javas
+ sist-3.20.0-GA.jar libbase-9.4.0.0-343.jar mdrapi-200507110943.jar org.
+ osgi.core-6.0.0.jar xml-apis-ext-1.3.04.jar antlr-complete-3.5.2.jar ba
+ tik-awt-util-1.9.1.jar derbyclient-10.2.1.6.jar jersey-bundle-1.19.1.ja
+ r jersey-client-1.19.1.jar log4j-1.2-api-2.17.1.jar mondrian-9.4.0.0-34
+ 3.jar spring-context-5.3.3.jar sqlite-jdbc-3.27.2.1.jar webservices-rt-
+ 2.3.1.jar batik-constants-1.9.1.jar blueprints-core-2.6.0.jar commons-c
+ ompress-1.20.jar jmiutils-200507110943.jar metastore-9.4.0.0-343.jar sp
+ ark-avro_2.11-4.0.0.jar trilead-ssh2-build213.jar webservices-api-2.3.1
+ .jar batik-transcoder-1.9.1.jar commons-compiler-3.0.8.jar eigenbase-re
+ sgen-1.3.1.jar kafka-clients-0.10.2.2.jar libformula-9.4.0.0-343.jar re
+ active-streams-1.0.2.jar snowflake-jdbc-3.13.10.jar commons-beanutils-1
+ .9.3.jar commons-validator-1.3.1.jar javax.servlet-api-3.1.0.jar javax.
+ websocket-api-1.0.jar jersey-multipart-1.19.1.jar kettle-core-9.4.0.0-3
+ 43.jar log4j-slf4j-impl-2.17.1.jar mysql-connector-j-8.1.0.jar org.ecli
+ pse.swt-3.121.0.jar spring-expression-5.3.3.jar validation-api-1.0.0.GA
+ .jar xmlgraphics-commons-2.2.jar commons-collections4-4.4.jar enunciate
+ -jersey-rt-1.27.jar jakarta.activation-1.2.2.jar org.eclipse.jface-3.22
+ .0.jar commons-collections-3.2.2.jar commons-configuration-1.9.jar jack
+ son-databind-2.9.10.2.jar jackson-jaxrs-base-2.9.10.jar jetty-io-9.4.18
+ .v20190429.jar kettle-engine-9.4.0.0-343.jar kettle-ui-swt-9.4.0.0-343.
+ jar mongo-java-driver-3.12.10.jar nbmdr-200507110943-custom.jar openide
+ -util-200507110943.jar spring-security-web-5.4.2.jar eigenbase-properti
+ es-1.1.2.jar hibernate-c3p0-3.6.9.Final.jar hibernate-core-3.6.9.Final.
+ jar jackson-annotations-2.9.10.jar jakarta.xml.bind-api-2.3.3.jar jetty
+ -xml-9.4.18.v20190429.jar pdi-engine-api-9.4.0.0-343.jar spring-securit
+ y-core-5.4.2.jar com.wcohen.secondstring-0.1.jar commons-xul-swt-9.4.0.
+ 0-343.jar jetty-http-9.4.18.v20190429.jar jetty-jaas-9.4.18.v20190429.j
+ ar jetty-util-9.4.18.v20190429.jar kettle-dbdialog-9.4.0.0-343.jar Luci
+ dDbClient-minimal-0.9.4.jar commons-xul-core-9.4.0.0-343.jar jakarta.ac
+ tivation-api-1.2.2.jar jakarta.annotation-api-1.3.5.jar jersey-apache-c
+ lient4-1.19.1.jar pentaho-metadata-9.4.0.0-343.jar pentaho-registry-9.4
+ .0.0-343.jar spring-context-support-5.3.3.jar commons-xul-swing-9.4.0.0
+ -343.jar hibernate-ehcache-3.6.9.Final.jar jetty-server-9.4.18.v2019042
+ 9.jar jetty-webapp-9.4.18.v20190429.jar jetty-servlet-9.4.18.v20190429.
+ jar tyrus-standalone-client-1.13.1.jar enunciate-core-annotations-1.27.
+ jar jetty-security-9.4.18.v20190429.jar pentaho-connections-9.4.0.0-343
+ .jar pentaho-mongo-utils-9.4.0.0-343.jar pentaho-vfs-browser-9.4.0.0-34
+ 3.jar pentaho-platform-api-9.4.0.0-343.jar org.eclipse.core.commands-3.
+ 9.800.jar org.eclipse.equinox.common-3.14.0.jar pentaho-metaverse-api-9
+ .4.0.0-343.jar pentaho-platform-core-9.4.0.0-343.jar commons-database-m
+ odel-9.4.0.0-343.jar file-open-save-new-api-9.4.0.0-343.jar jackson-jax
+ rs-json-provider-2.9.10.jar org.eclipse.paho.client.mqttv3-1.2.2.jar pe
+ ntaho-capability-manager-9.4.0.0-343.jar pentaho-encryption-support-9.4
+ .0.0-343.jar pentaho-platform-extensions-9.4.0.0-343.jar pentaho-platfo
+ rm-repository-9.4.0.0-343.jar pentaho-big-data-legacy-core-9.4.0.0-343.
+ jar hibernate-commons-annotations-3.2.0.Final.jar pentaho-metastore-loc
+ ator-api-9.4.0.0-343.jar pentaho-kettle-repository-locator-api-9.4.0.0-
+ 343.jar commons-csv-1.10.0.jar weka.jar
 

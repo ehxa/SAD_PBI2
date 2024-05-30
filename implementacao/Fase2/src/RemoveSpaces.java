@@ -7,8 +7,8 @@ public class RemoveSpaces{
         System.out.print("Insert the name of the csv: ");
         String fileName = input.nextLine();
         input.close();
-        String sourceFilePath = "../Output/csv/" + fileName + ".csv";
-        String destinationFilePath = "../Output/csv/" + fileName + "New.csv";
+        String sourceFilePath = "C:\\Users\\diogo\\Documents\\GitHub\\SAD_PBI_2\\implementacao\\Fase2\\Output\\csv\\" + fileName + ".csv";
+        String destinationFilePath = "C:\\Users\\diogo\\Documents\\GitHub\\SAD_PBI_2\\implementacao\\Fase2\\Output\\csv\\" + fileName + ".csv";
         File source = new File(sourceFilePath);
         try {
             Scanner csvScanner = new Scanner(source);

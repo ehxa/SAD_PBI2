@@ -23,8 +23,8 @@ public class CSVFormatter
             Scanner input = new Scanner(System.in);
             System.out.print("Insert the name of the csv: ");
             String fileName = input.nextLine();
-            String sourceFilePath = "../Output/csv/" + fileName + ".csv";
-            String destinationFilePath = "../Output/csv/" + fileName + "New.csv";
+            String sourceFilePath = "C:\\Users\\diogo\\Documents\\GitHub\\SAD_PBI_2\\implementacao\\Fase2\\Output\\csv\\TASKDATA" + fileName + ".csv";
+            String destinationFilePath = "C:\\Users\\diogo\\Documents\\GitHub\\SAD_PBI_2\\implementacao\\Fase2\\Output\\csv\\TASKDATA" + fileName + ".csv";
             Path pathInput = Paths.get ( sourceFilePath );
             Path pathOutput = Paths.get ( destinationFilePath );
             System.out.print("Insert the name of the aggregator column: ");
