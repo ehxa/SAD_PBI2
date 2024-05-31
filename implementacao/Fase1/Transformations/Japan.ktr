@@ -9,6 +9,11 @@
     <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
+      <parameter>
+        <name>PDI_PATH</name>
+        <default_value>C:\Users\diogo\Documents\GitHub\SAD_PBI_2\implementacao\Fase1</default_value>
+        <description/>
+      </parameter>
     </parameters>
     <log>
       <trans-log-table>
@@ -939,7 +944,7 @@ CUSTOMERS.COUNTRY = 'Japan'
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>Z:\Documents\GitHub\SAD_PBI\Output\Japan\Japan</name>
+      <name>${PDI_PATH}\Output\Japan\Japan</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
@@ -1201,7 +1206,7 @@ WHERE ORDERFACT.TIME_ID = DIM_TIME.TIME_ID AND
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>Z:\Documents\GitHub\SAD_PBI\Output\Japan\Japan</name>
+      <name>${PDI_PATH}\Output\Japan\Japan</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
@@ -1451,7 +1456,7 @@ GROUP BY ORDERFACT.ORDERNUMBER, ORDERFACT.CUSTOMERNUMBER, ORDERFACT.PRODUCTCODE,
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>Z:\Documents\GitHub\SAD_PBI\Output\Japan\Japan</name>
+      <name>${PDI_PATH}\Output\Japan\Japan</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
@@ -1871,7 +1876,7 @@ WHERE ORDERFACT.ORDERNUMBER = ORDERS.ORDERNUMBER AND
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>Z:\Documents\GitHub\SAD_PBI\Output\Japan\Japan</name>
+      <name>${PDI_PATH}\Output\Japan\Japan</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
@@ -2326,7 +2331,7 @@ CUSTOMERS.COUNTRY = 'Japan'
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>Z:\Documents\GitHub\SAD_PBI\Output\Japan\Japan</name>
+      <name>${PDI_PATH}\Output\Japan\Japan</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>

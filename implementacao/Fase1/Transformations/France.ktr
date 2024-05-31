@@ -9,6 +9,11 @@
     <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
+      <parameter>
+        <name>PDI_PATH</name>
+        <default_value>C:\Users\diogo\Documents\GitHub\SAD_PBI_2\implementacao\Fase1</default_value>
+        <description/>
+      </parameter>
     </parameters>
     <log>
       <trans-log-table>
@@ -791,7 +796,7 @@ CUSTOMERS.COUNTRY = 'France'
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>Z:\Documents\GitHub\SAD_PBI\Output\France\CUSTOMERS_France</name>
+      <name>${PDI_PATH}\Output\France\CUSTOMERS_France</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
       <extention>csv</extention>
@@ -1045,7 +1050,7 @@ WHERE ORDERFACT.TIME_ID = DIM_TIME.TIME_ID AND
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>Z:\Documents\GitHub\SAD_PBI\Output\France\DIM_TIME_France</name>
+      <name>${PDI_PATH}\Output\France\DIM_TIME_France</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
       <extention>csv</extention>
@@ -1323,7 +1328,7 @@ GROUP BY ORDERFACT.ORDERNUMBER, ORDERFACT.CUSTOMERNUMBER, ORDERFACT.PRODUCTCODE,
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>Z:\Documents\GitHub\SAD_PBI\Output\France\FACT_France</name>
+      <name>${PDI_PATH}\Output\France\FACT_France</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
       <extention>csv</extention>
@@ -1784,7 +1789,7 @@ WHERE ORDERFACT.ORDERNUMBER = ORDERS.ORDERNUMBER AND
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>Z:\Documents\GitHub\SAD_PBI\Output\France\ORDERS_France</name>
+      <name>${PDI_PATH}\Output\France\ORDERS_France</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
       <extention>csv</extention>
@@ -2231,7 +2236,7 @@ CUSTOMERS.COUNTRY = 'France'
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>Z:\Documents\GitHub\SAD_PBI\Output\France\PRODUCTS_France</name>
+      <name>${PDI_PATH}\Output\France\PRODUCTS_France</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
       <extention>csv</extention>

@@ -9,6 +9,11 @@
     <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
+      <parameter>
+        <name>PDI_PATH</name>
+        <default_value>C:\Users\diogo\Documents\GitHub\SAD_PBI_2\implementacao\Fase1</default_value>
+        <description/>
+      </parameter>
     </parameters>
     <log>
       <trans-log-table>
@@ -916,7 +921,7 @@ CUSTOMERS.COUNTRY = 'Singapore'
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>Z:\Documents\GitHub\SAD_PBI\Output\Singapore\Singapore_Output.mdb</filename>
+    <filename>${PDI_PATH}\Output\Singapore\Singapore_Output.mdb</filename>
     <table>CUSTOMERS</table>
     <truncate>Y</truncate>
     <create_file>Y</create_file>
@@ -1062,11 +1067,11 @@ WHERE ORDERFACT.TIME_ID = DIM_TIME.TIME_ID AND
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>Z:\Documents\GitHub\SAD_PBI\Output\Singapore\Singapore_Output.mdb</filename>
+    <filename>${PDI_PATH}\Output\Singapore\Singapore_Output.mdb</filename>
     <table>DIM_TIME</table>
     <truncate>Y</truncate>
     <create_file>N</create_file>
-    <create_table>Y</create_table>
+    <create_table>N</create_table>
     <commit_size>1000</commit_size>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <do_not_open_newfile_init>Y</do_not_open_newfile_init>
@@ -1280,11 +1285,11 @@ GROUP BY ORDERFACT.ORDERNUMBER, ORDERFACT.CUSTOMERNUMBER, ORDERFACT.PRODUCTCODE,
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>Z:\Documents\GitHub\SAD_PBI\Output\Singapore\Singapore_Output.mdb</filename>
+    <filename>${PDI_PATH}\Output\Singapore\Singapore_Output.mdb</filename>
     <table>FACT</table>
     <truncate>Y</truncate>
     <create_file>N</create_file>
-    <create_table>Y</create_table>
+    <create_table>N</create_table>
     <commit_size>1000</commit_size>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <do_not_open_newfile_init>Y</do_not_open_newfile_init>
@@ -1739,11 +1744,11 @@ WHERE ORDERFACT.ORDERNUMBER = ORDERS.ORDERNUMBER AND
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>Z:\Documents\GitHub\SAD_PBI\Output\Singapore\Singapore_Output.mdb</filename>
+    <filename>${PDI_PATH}\Output\Singapore\Singapore_Output.mdb</filename>
     <table>ORDERS</table>
     <truncate>Y</truncate>
     <create_file>N</create_file>
-    <create_table>Y</create_table>
+    <create_table>N</create_table>
     <commit_size>1000</commit_size>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <do_not_open_newfile_init>Y</do_not_open_newfile_init>
@@ -2107,11 +2112,11 @@ CUSTOMERS.COUNTRY = 'Singapore'
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>Z:\Documents\GitHub\SAD_PBI\Output\Singapore\Singapore_Output.mdb</filename>
+    <filename>${PDI_PATH}\Output\Singapore\Singapore_Output.mdb</filename>
     <table>PRODUCTS</table>
     <truncate>Y</truncate>
     <create_file>N</create_file>
-    <create_table>Y</create_table>
+    <create_table>N</create_table>
     <commit_size>1000</commit_size>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <do_not_open_newfile_init>Y</do_not_open_newfile_init>
@@ -2231,27 +2236,21 @@ CUSTOMERS.COUNTRY = 'Singapore'
     <fields>
       <field>
         <name>ORDERNUMBER</name>
-        <rename/>
       </field>
       <field>
         <name>ORDERDATE</name>
-        <rename/>
       </field>
       <field>
         <name>REQUIREDDATE</name>
-        <rename/>
       </field>
       <field>
         <name>SHIPPEDDATE</name>
-        <rename/>
       </field>
       <field>
         <name>STATUS</name>
-        <rename/>
       </field>
       <field>
         <name>CUSTOMERNUMBER</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
       <meta>

@@ -9,6 +9,11 @@
     <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
+      <parameter>
+        <name>PDI_PATH</name>
+        <default_value>C:\Users\diogo\Documents\GitHub\SAD_PBI_2\implementacao\Fase1</default_value>
+        <description/>
+      </parameter>
     </parameters>
     <log>
       <trans-log-table>
